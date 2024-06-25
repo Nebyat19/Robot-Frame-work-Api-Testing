@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-06-25T22:30:28.902432" rpa="false" schemaversion="5">
+<suite id="s1" name="TestSuite GetAnnouncement" source="/home/hetu/Desktop/4th-year/Assignment/FTP/tests/TestSuite_GetAnnouncement.robot">
+<test id="s1-t1" name="TC_GetAnnouncements_08" line="13">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-25T22:30:29.049295" level="INFO">${url} = https://trello.com/announcements</msg>
+<var>${url}</var>
+<arg>https://trello.com/announcements</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-25T22:30:29.049093" elapsed="0.000233"/>
+</kw>
+<kw name="Make API Request" owner="CommonKeywords">
+<kw name="Make Request" owner="CustomKeywords">
+<msg time="2024-06-25T22:30:29.744448" level="INFO">${response} = {'status_code': 200, 'json': []}</msg>
+<var>${response}</var>
+<arg>${method}</arg>
+<arg>${url}</arg>
+<arg>${headers}</arg>
+<arg>${payload}</arg>
+<status status="PASS" start="2024-06-25T22:30:29.049944" elapsed="0.694559"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-06-25T22:30:29.744616" elapsed="0.000062"/>
+</return>
+<msg time="2024-06-25T22:30:29.744882" level="INFO">${response} = {'status_code': 200, 'json': []}</msg>
+<var>${response}</var>
+<arg>GET</arg>
+<arg>${url}</arg>
+<arg>${HEADERS}</arg>
+<status status="PASS" start="2024-06-25T22:30:29.049609" elapsed="0.695303"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-25T22:30:29.745294" level="INFO">{'status_code': 200, 'json': []}</msg>
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-25T22:30:29.745125" elapsed="0.000211"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${response} != {}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-06-25T22:30:29.745477" elapsed="0.000279"/>
+</kw>
+<doc>To verify that the Trello API endpoint correctly returns the latest announcements and relevant information.</doc>
+<status status="PASS" start="2024-06-25T22:30:29.048304" elapsed="0.697602"/>
+</test>
+<status status="PASS" start="2024-06-25T22:30:28.904233" elapsed="0.842002"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestSuite GetAnnouncement">TestSuite GetAnnouncement</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-06-25T22:30:28.928781" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

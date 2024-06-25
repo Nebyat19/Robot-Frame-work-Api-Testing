@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-06-25T22:30:27.686305" rpa="false" schemaversion="5">
+<suite id="s1" name="TestSuite AddComment" source="/home/hetu/Desktop/4th-year/Assignment/FTP/tests/TestSuite_AddComment.robot">
+<test id="s1-t1" name="TC_AddComment_09" line="12">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-25T22:30:27.830571" level="INFO">${url} = https://trello.com/1/cards/667b0d6545c914f2ec9c8eca/actions/comments</msg>
+<var>${url}</var>
+<arg>https://trello.com/1/cards/667b0d6545c914f2ec9c8eca/actions/comments</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-25T22:30:27.830414" elapsed="0.000185"/>
+</kw>
+<kw name="Make API Request" owner="CommonKeywords">
+<kw name="Make Request" owner="CustomKeywords">
+<msg time="2024-06-25T22:30:28.619054" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667b1ad449b26aef2d939717', 'idMemberCreator': '65cfa15e25d7553446fd03b8', 'data': {'text': 'NEW COMMENT', 'textData': {'emoji': {}}, 'card': {'id': '667b0d6545c914...</msg>
+<var>${response}</var>
+<arg>${method}</arg>
+<arg>${url}</arg>
+<arg>${headers}</arg>
+<arg>${payload}</arg>
+<status status="PASS" start="2024-06-25T22:30:27.831120" elapsed="0.787997"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-06-25T22:30:28.619362" elapsed="0.000122"/>
+</return>
+<msg time="2024-06-25T22:30:28.619754" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667b1ad449b26aef2d939717', 'idMemberCreator': '65cfa15e25d7553446fd03b8', 'data': {'text': 'NEW COMMENT', 'textData': {'emoji': {}}, 'card': {'id': '667b0d6545c914...</msg>
+<var>${response}</var>
+<arg>POST</arg>
+<arg>${url}</arg>
+<arg>${HEADERS}</arg>
+<arg>${NEW_COMMENT}</arg>
+<status status="PASS" start="2024-06-25T22:30:27.830815" elapsed="0.788973"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-25T22:30:28.620386" level="INFO">{'status_code': 200, 'json': {'id': '667b1ad449b26aef2d939717', 'idMemberCreator': '65cfa15e25d7553446fd03b8', 'data': {'text': 'NEW COMMENT', 'textData': {'emoji': {}}, 'card': {'id': '667b0d6545c914f2ec9c8eca', 'name': 'test1', 'idShort': 7, 'shortLink': 'MNoChIHJ'}, 'board': {'id': '667abce41d62f33346bdc71d', 'name': 'Test case', 'shortLink': 'x1RVOxDV'}, 'list': {'id': '667b0cf470a404d30c04f1f9', 'name': 'test list'}}, 'appCreator': None, 'type': 'commentCard', 'date': '2024-06-25T19:30:28.414Z', 'limits': {'reactions': {'perAction': {'status': 'ok', 'disableAt': 900, 'warnAt': 720}, 'uniquePerAction': {'status': 'ok', 'disableAt': 17, 'warnAt': 14}}}, 'display': {'translationKey': 'action_comment_on_card', 'entities': {'contextOn': {'type': 'translatable', 'translationKey': 'action_on', 'hideIfContext': True, 'idContext': '667b0d6545c914f2ec9c8eca'}, 'card': {'type': 'card', 'hideIfContext': True, 'id': '667b0d6545c914f2ec9c8eca', 'shortLink': 'MNoChIHJ', 'text': 'test1'}, 'comment': {'type': 'comment', 'text': 'NEW COMMENT'}, 'memberCreator': {'type': 'member', 'id': '65cfa15e25d7553446fd03b8', 'username': 'adamweiss62', 'text': 'Nebyat Bekele'}}}, 'entities': [{'type': 'member', 'id': '65cfa15e25d7553446fd03b8', 'username': 'adamweiss62', 'text': 'Nebyat Bekele'}, {'type': 'text', 'text': 'on', 'hideIfContext': True, 'idContext': '667b0d6545c914f2ec9c8eca'}, {'type': 'card', 'hideIfContext': True, 'id': '667b0d6545c914f2ec9c8eca', 'shortLink': 'MNoChIHJ', 'text': 'test1'}, {'type': 'comment', 'text': 'NEW COMMENT'}], 'memberCreator': {'id': '65cfa15e25d7553446fd03b8', 'activityBlocked': False, 'avatarHash': 'aa54fdba0dd700baff8ebda6c7f10990', 'avatarUrl': 'https://trello-members.s3.amazonaws.com/65cfa15e25d7553446fd03b8/aa54fdba0dd700baff8ebda6c7f10990', 'fullName': 'nebyat', 'idMemberReferrer': None, 'initials': 'N', 'nonPublic': {'fullName': 'Nebyat Bekele', 'initials': 'NB', 'avatarUrl': 'https://trello-members.s3.amazonaws.com/65cfa15e25d7553446fd03b8/aa54fdba0dd700baff8ebda6c7f10990', 'avatarHash': 'aa54fdba0dd700baff8ebda6c7f10990'}, 'nonPublicAvailable': True, 'username': 'adamweiss62'}}}</msg>
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-25T22:30:28.620067" elapsed="0.000409"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${response} != {}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-06-25T22:30:28.620700" elapsed="0.000713"/>
+</kw>
+<doc>To verify that user is able to add comment to a card</doc>
+<status status="PASS" start="2024-06-25T22:30:27.829836" elapsed="0.791778"/>
+</test>
+<status status="PASS" start="2024-06-25T22:30:27.687163" elapsed="0.934830"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestSuite AddComment">TestSuite AddComment</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-06-25T22:30:27.704206" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

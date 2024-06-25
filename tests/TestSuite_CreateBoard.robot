@@ -2,7 +2,7 @@
 
 *** Settings ***
 Resource  ../resources/CommonKeywords.robot
-Resource  ../resources/CommonVariables.robot
+Variables  ../resources/CommonVariables.py
 Library   Collections
 Library   JSONLibrary
 Variables    VariableFile.py

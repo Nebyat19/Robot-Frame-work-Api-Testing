@@ -2,16 +2,25 @@
 
 *** Settings ***
 Resource  ../resources/CommonKeywords.robot
-Resource  ../resources/CommonVariables.robot
+Variables  ../resources/CommonVariables.py
 Library   Collections
 Library   JSONLibrary
 Variables    VariableFile.py
 
 *** Test Cases ***
-Test POST Endpoint
+TC_Create_Card_06
+    [Documentation]    Verify that a card can be created successfully with a valid name
+    [Tags]    CreateCard
     ${url}=  Set Variable  https://trello.com/1/cards
-    ${payload}=  Create Dictionary  name=New Board  defaultLabels=true  defaultLists=true  keepFromSource=none  prefs_permissionLevel=private
-    ${response}=  Make API Request  POST  ${url}  ${HEADERS}  ${NEW_CARD_PAYLOAD_WITHOUT_NAME}
-    Log  ${response}
-    Should Be True  ${response} != {}
+    ${response}=  Make API Request  POST  ${url}  ${HEADERS}  ${NEW_CARD_PAYLOAD_WITH_NAME}
+    Should Be Equal As Numbers    ${response['status_code']}    200
+    Log    ${response}
+
+TC_Create_Card_07
+    [Documentation]    This test verifies that a card cannot be created on a deleted board.
+    [Tags]    CreateCard
+    ${url}=  Set Variable  https://trello.com/1/cards
+    ${response}=  Make API Request  POST  ${url}  ${HEADERS}  ${NEW_CARD_PAYLOAD_WITHOUT_ID}
+    Should Not Be Equal As Numbers    ${response['status_code']}    200
+    Log    ${response}  
 

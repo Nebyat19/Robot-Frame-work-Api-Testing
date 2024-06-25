@@ -1,167 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-06-25T15:49:38.136179" rpa="false" schemaversion="5">
-<suite id="s1" name="TestSuite CreateBoard" source="/home/hetu/Desktop/4th-year/Assignment/FTP/tests/TestSuite_CreateBoard.robot">
-<test id="s1-t1" name="TC_Create_Board_01" line="11">
+<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-06-25T22:29:09.905503" rpa="false" schemaversion="5">
+<suite id="s1" name="TestSuite Search" source="/home/hetu/Desktop/4th-year/Assignment/FTP/tests/TestSuite_Search.robot">
+<test id="s1-t1" name="TC_AddComment_09" line="12">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-06-25T15:49:38.276431" level="INFO">${url} = https://trello.com/1/boards</msg>
+<msg time="2024-06-25T22:29:10.771644" level="INFO">${url} = https://trello.com/1/search?query=@me&amp;partial=true&amp;modelTypes=boards,cards,members,organizations&amp;board_fields=id,closed,dateLastActivity,dateLastView,idOrganization,name,prefs,shortLink,id,name&amp;board_...</msg>
 <var>${url}</var>
-<arg>https://trello.com/1/boards</arg>
+<arg>https://trello.com/1/search?query=@me&amp;partial=true&amp;modelTypes=boards,cards,members,organizations&amp;board_fields=id,closed,dateLastActivity,dateLastView,idOrganization,name,prefs,shortLink,id,name&amp;board_organization=true&amp;board_organization_fields=id,displayName&amp;card_fields=id,closed,dateLastActivity,desc,idBoard,name,shortLink,url&amp;cards_limit=11&amp;cards_page=0&amp;card_board=true&amp;card_list=true&amp;member_fields=id,avatarUrl,fullName,initials,nonPublic,username&amp;organization_fields=id,displayName,logoHash,name</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-06-25T15:49:38.276201" elapsed="0.000268"/>
+<status status="PASS" start="2024-06-25T22:29:10.771219" elapsed="0.000505"/>
 </kw>
 <kw name="Make API Request" owner="CommonKeywords">
 <kw name="Make Request" owner="CustomKeywords">
-<msg time="2024-06-25T15:49:39.709474" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667abce3cf05e4eccd10c8a4', 'name': 'new board', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, ...</msg>
+<msg time="2024-06-25T22:29:12.022123" level="INFO">${response} = {'status_code': 200, 'json': {'options': {'terms': [], 'modifiers': [{'text': 'member:me', 'partial': True}], 'modelTypes': ['cards'], 'partial': True}, 'cards': [{'id': '6676a0326649921dc9736228', 'c...</msg>
 <var>${response}</var>
 <arg>${method}</arg>
 <arg>${url}</arg>
 <arg>${headers}</arg>
 <arg>${payload}</arg>
-<status status="PASS" start="2024-06-25T15:49:38.277175" elapsed="1.432446"/>
+<status status="PASS" start="2024-06-25T22:29:10.772968" elapsed="1.249259"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2024-06-25T15:49:39.709795" elapsed="0.000093"/>
+<status status="PASS" start="2024-06-25T22:29:12.022333" elapsed="0.000048"/>
 </return>
-<msg time="2024-06-25T15:49:39.710277" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667abce3cf05e4eccd10c8a4', 'name': 'new board', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, ...</msg>
+<msg time="2024-06-25T22:29:12.022627" level="INFO">${response} = {'status_code': 200, 'json': {'options': {'terms': [], 'modifiers': [{'text': 'member:me', 'partial': True}], 'modelTypes': ['cards'], 'partial': True}, 'cards': [{'id': '6676a0326649921dc9736228', 'c...</msg>
 <var>${response}</var>
-<arg>POST</arg>
+<arg>GET</arg>
 <arg>${url}</arg>
 <arg>${HEADERS}</arg>
-<arg>${NEW_BOARD_PAYLOAD_WITH_NAME}</arg>
-<status status="PASS" start="2024-06-25T15:49:38.276811" elapsed="1.433521"/>
-</kw>
-<kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-06-25T15:49:39.711785" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<arg>${response['status_code']}</arg>
-<arg>200</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-06-25T15:49:39.710722" elapsed="0.001195"/>
+<status status="PASS" start="2024-06-25T22:29:10.772230" elapsed="1.250423"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-06-25T15:49:39.712685" level="INFO">{'status_code': 200, 'json': {'id': '667abce3cf05e4eccd10c8a4', 'name': 'new board', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, 'pinned': False, 'url': 'https://trello.com/b/mhbJQ1PJ/new-board', 'shortUrl': 'https://trello.com/b/mhbJQ1PJ', 'prefs': {'permissionLevel': 'org', 'hideVotes': False, 'voting': 'disabled', 'comments': 'members', 'invitations': 'members', 'selfJoin': True, 'cardCovers': True, 'cardCounts': False, 'isTemplate': False, 'cardAging': 'regular', 'calendarFeedEnabled': False, 'hiddenPluginBoardButtons': [], 'switcherViews': [{'viewType': 'Board', 'enabled': True}, {'viewType': 'Table', 'enabled': True}, {'viewType': 'Calendar', 'enabled': False}, {'viewType': 'Dashboard', 'enabled': False}, {'viewType': 'Timeline', 'enabled': False}, {'viewType': 'Map', 'enabled': False}], 'background': 'blue', 'backgroundColor': '#0079BF', 'backgroundImage': None, 'backgroundTile': False, 'backgroundBrightness': 'dark', 'sharedSourceUrl': None, 'backgroundImageScaled': None, 'backgroundBottomColor': '#0079BF', 'backgroundTopColor': '#0079BF', 'canBePublic': True, 'canBeEnterprise': True, 'canBeOrg': True, 'canBePrivate': True, 'canInvite': True}, 'labelNames': {'green': '', 'yellow': '', 'orange': '', 'red': '', 'purple': '', 'blue': '', 'sky': '', 'lime': '', 'pink': '', 'black': '', 'green_dark': '', 'yellow_dark': '', 'orange_dark': '', 'red_dark': '', 'purple_dark': '', 'blue_dark': '', 'sky_dark': '', 'lime_dark': '', 'pink_dark': '', 'black_dark': '', 'green_light': '', 'yellow_light': '', 'orange_light': '', 'red_light': '', 'purple_light': '', 'blue_light': '', 'sky_light': '', 'lime_light': '', 'pink_light': '', 'black_light': ''}, 'limits': {}}}</msg>
+<msg time="2024-06-25T22:29:12.023171" level="INFO">{'status_code': 200, 'json': {'options': {'terms': [], 'modifiers': [{'text': 'member:me', 'partial': True}], 'modelTypes': ['cards'], 'partial': True}, 'cards': [{'id': '6676a0326649921dc9736228', 'closed': False, 'dateLastActivity': '2024-06-22T13:48:44.554Z', 'desc': '', 'idBoard': '6651e5876c90501fb526b92f', 'name': 'ServeSync - Cafe ordering management system', 'shortLink': 'P1Owcmw1', 'url': 'https://trello.com/c/P1Owcmw1/15-servesync-cafe-ordering-management-system', 'board': {'id': '6651e5876c90501fb526b92f', 'closed': False, 'dateLastActivity': '2024-06-25T16:21:26.556Z', 'dateLastView': '2024-06-25T16:19:24.462Z', 'idOrganization': '6630bd48db4e070c96bdc79d', 'name': 'Software Group', 'prefs': {'permissionLevel': 'org', 'hideVotes': False, 'voting': 'disabled', 'comments': 'members', 'invitations': 'members', 'selfJoin': False, 'cardCovers': True, 'cardCounts': False, 'isTemplate': False, 'cardAging': 'regular', 'calendarFeedEnabled': False, 'hiddenPluginBoardButtons': [], 'switcherViews': [{'viewType': 'Board', 'enabled': True}, {'viewType': 'Table', 'enabled': True}, {'viewType': 'Calendar', 'enabled': False}, {'viewType': 'Dashboard', 'enabled': False}, {'viewType': 'Timeline', 'enabled': False}, {'viewType': 'Map', 'enabled': False}], 'background': '5dfa855f31b76a80318febaf', 'backgroundColor': None, 'backgroundImage': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/d71b9370b4cba91634ae4ffe331fb59a/photo-1576502200916-3808e07386a5', 'backgroundTile': False, 'backgroundBrightness': 'light', 'sharedSourceUrl': 'https://images.unsplash.com/photo-1576502200916-3808e07386a5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjcwNjZ9&amp;w=2560&amp;h=2048&amp;q=90', 'backgroundImageScaled': [{'width': 140, 'height': 94, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/140x94/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 256, 'height': 172, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x172/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 480, 'height': 322, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x322/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 960, 'height': 644, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/960x644/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1024, 'height': 687, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1024x687/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1280, 'height': 859, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x859/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1920, 'height': 1288, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1920x1288/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2048, 'height': 1374, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2048x1374/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2386, 'height': 1600, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2560, 'height': 1717, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/d71b9370b4cba91634ae4ffe331fb59a/photo-1576502200916-3808e07386a5'}], 'backgroundBottomColor': '#068faa', 'backgroundTopColor': '#ddaba7', 'canBePublic': True, 'canBeEnterprise': True, 'canBeOrg': True, 'canBePrivate': True, 'canInvite': True}, 'shortLink': 'dIX9eqti'}, 'list': {'id': '6651e5876c90501fb526b931', 'name': 'Design', 'closed': False, 'color': None, 'idBoard': '6651e5876c90501fb526b92f', 'pos': 131071, 'subscribed': False, 'softLimit': None}}, {'id': '6651e81f5d8081a1fbc5e523', 'closed': False, 'dateLastActivity': '2024-05-25T13:44:04.860Z', 'desc': '', 'idBoard': '6651e5876c90501fb526b92f', 'name': 'Manufacturing system control system', 'shortLink': 'wlMEqXj7', 'url': 'https://trello.com/c/wlMEqXj7/7-manufacturing-system-control-system', 'board': {'id': '6651e5876c90501fb526b92f', 'closed': False, 'dateLastActivity': '2024-06-25T16:21:26.556Z', 'dateLastView': '2024-06-25T16:19:24.462Z', 'idOrganization': '6630bd48db4e070c96bdc79d', 'name': 'Software Group', 'prefs': {'permissionLevel': 'org', 'hideVotes': False, 'voting': 'disabled', 'comments': 'members', 'invitations': 'members', 'selfJoin': False, 'cardCovers': True, 'cardCounts': False, 'isTemplate': False, 'cardAging': 'regular', 'calendarFeedEnabled': False, 'hiddenPluginBoardButtons': [], 'switcherViews': [{'viewType': 'Board', 'enabled': True}, {'viewType': 'Table', 'enabled': True}, {'viewType': 'Calendar', 'enabled': False}, {'viewType': 'Dashboard', 'enabled': False}, {'viewType': 'Timeline', 'enabled': False}, {'viewType': 'Map', 'enabled': False}], 'background': '5dfa855f31b76a80318febaf', 'backgroundColor': None, 'backgroundImage': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/d71b9370b4cba91634ae4ffe331fb59a/photo-1576502200916-3808e07386a5', 'backgroundTile': False, 'backgroundBrightness': 'light', 'sharedSourceUrl': 'https://images.unsplash.com/photo-1576502200916-3808e07386a5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjcwNjZ9&amp;w=2560&amp;h=2048&amp;q=90', 'backgroundImageScaled': [{'width': 140, 'height': 94, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/140x94/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 256, 'height': 172, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x172/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 480, 'height': 322, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x322/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 960, 'height': 644, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/960x644/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1024, 'height': 687, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1024x687/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1280, 'height': 859, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x859/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1920, 'height': 1288, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1920x1288/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2048, 'height': 1374, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2048x1374/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2386, 'height': 1600, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2560, 'height': 1717, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/d71b9370b4cba91634ae4ffe331fb59a/photo-1576502200916-3808e07386a5'}], 'backgroundBottomColor': '#068faa', 'backgroundTopColor': '#ddaba7', 'canBePublic': True, 'canBeEnterprise': True, 'canBeOrg': True, 'canBePrivate': True, 'canInvite': True}, 'shortLink': 'dIX9eqti'}, 'list': {'id': '6651e5876c90501fb526b930', 'name': 'Backlog', 'closed': False, 'color': None, 'idBoard': '6651e5876c90501fb526b92f', 'pos': 65535, 'subscribed': False, 'softLimit': None}}, {'id': '6651e7bf27fc660ab759228d', 'closed': False, 'dateLastActivity': '2024-05-25T13:43:47.007Z', 'desc': '', 'idBoard': '6651e5876c90501fb526b92f', 'name': 'Arts and crafts advertising outlet', 'shortLink': 'xc3bf0BQ', 'url': 'https://trello.com/c/xc3bf0BQ/6-arts-and-crafts-advertising-outlet', 'board': {'id': '6651e5876c90501fb526b92f', 'closed': False, 'dateLastActivity': '2024-06-25T16:21:26.556Z', 'dateLastView': '2024-06-25T16:19:24.462Z', 'idOrganization': '6630bd48db4e070c96bdc79d', 'name': 'Software Group', 'prefs': {'permissionLevel': 'org', 'hideVotes': False, 'voting': 'disabled', 'comments': 'members', 'invitations': 'members', 'selfJoin': False, 'cardCovers': True, 'cardCounts': False, 'isTemplate': False, 'cardAging': 'regular', 'calendarFeedEnabled': False, 'hiddenPluginBoardButtons': [], 'switcherViews': [{'viewType': 'Board', 'enabled': True}, {'viewType': 'Table', 'enabled': True}, {'viewType': 'Calendar', 'enabled': False}, {'viewType': 'Dashboard', 'enabled': False}, {'viewType': 'Timeline', 'enabled': False}, {'viewType': 'Map', 'enabled': False}], 'background': '5dfa855f31b76a80318febaf', 'backgroundColor': None, 'backgroundImage': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/d71b9370b4cba91634ae4ffe331fb59a/photo-1576502200916-3808e07386a5', 'backgroundTile': False, 'backgroundBrightness': 'light', 'sharedSourceUrl': 'https://images.unsplash.com/photo-1576502200916-3808e07386a5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjcwNjZ9&amp;w=2560&amp;h=2048&amp;q=90', 'backgroundImageScaled': [{'width': 140, 'height': 94, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/140x94/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 256, 'height': 172, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x172/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 480, 'height': 322, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x322/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 960, 'height': 644, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/960x644/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1024, 'height': 687, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1024x687/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1280, 'height': 859, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x859/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1920, 'height': 1288, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1920x1288/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2048, 'height': 1374, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2048x1374/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2386, 'height': 1600, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2560, 'height': 1717, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/d71b9370b4cba91634ae4ffe331fb59a/photo-1576502200916-3808e07386a5'}], 'backgroundBottomColor': '#068faa', 'backgroundTopColor': '#ddaba7', 'canBePublic': True, 'canBeEnterprise': True, 'canBeOrg': True, 'canBePrivate': True, 'canInvite': True}, 'shortLink': 'dIX9eqti'}, 'list': {'id': '6651e5876c90501fb526b930', 'name': 'Backlog', 'closed': False, 'color': None, 'idBoard': '6651e5876c90501fb526b92f', 'pos': 65535, 'subscribed': False, 'softLimit': None}}, {'id': '6651e7b467f3900592b0465e', 'closed': False, 'dateLastActivity': '2024-05-25T13:43:25.312Z', 'desc': '', 'idBoard': '6651e5876c90501fb526b92f', 'name': 'Customer service chatbot', 'shortLink': 'Mr8zUdu3', 'url': 'https://trello.com/c/Mr8zUdu3/5-customer-service-chatbot', 'board': {'id': '6651e5876c90501fb526b92f', 'closed': False, 'dateLastActivity': '2024-06-25T16:21:26.556Z', 'dateLastView': '2024-06-25T16:19:24.462Z', 'idOrganization': '6630bd48db4e070c96bdc79d', 'name': 'Software Group', 'prefs': {'permissionLevel': 'org', 'hideVotes': False, 'voting': 'disabled', 'comments': 'members', 'invitations': 'members', 'selfJoin': False, 'cardCovers': True, 'cardCounts': False, 'isTemplate': False, 'cardAging': 'regular', 'calendarFeedEnabled': False, 'hiddenPluginBoardButtons': [], 'switcherViews': [{'viewType': 'Board', 'enabled': True}, {'viewType': 'Table', 'enabled': True}, {'viewType': 'Calendar', 'enabled': False}, {'viewType': 'Dashboard', 'enabled': False}, {'viewType': 'Timeline', 'enabled': False}, {'viewType': 'Map', 'enabled': False}], 'background': '5dfa855f31b76a80318febaf', 'backgroundColor': None, 'backgroundImage': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/d71b9370b4cba91634ae4ffe331fb59a/photo-1576502200916-3808e07386a5', 'backgroundTile': False, 'backgroundBrightness': 'light', 'sharedSourceUrl': 'https://images.unsplash.com/photo-1576502200916-3808e07386a5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjcwNjZ9&amp;w=2560&amp;h=2048&amp;q=90', 'backgroundImageScaled': [{'width': 140, 'height': 94, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/140x94/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 256, 'height': 172, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/256x172/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 480, 'height': 322, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/480x322/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 960, 'height': 644, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/960x644/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1024, 'height': 687, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1024x687/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1280, 'height': 859, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1280x859/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 1920, 'height': 1288, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/1920x1288/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2048, 'height': 1374, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2048x1374/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2386, 'height': 1600, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/2386x1600/47f09f0e3910259568294477d0bdedac/photo-1576502200916-3808e07386a5.jpg'}, {'width': 2560, 'height': 1717, 'url': 'https://trello-backgrounds.s3.amazonaws.com/SharedBackground/original/d71b9370b4cba91634ae4ffe331fb59a/photo-1576502200916-3808e07386a5'}], 'backgroundBottomColor': '#068faa', 'backgroundTopColor': '#ddaba7', 'canBePublic': True, 'canBeEnterprise': True, 'canBeOrg': True, 'canBePrivate': True, 'canInvite': True}, 'shortLink': 'dIX9eqti'}, 'list': {'id': '6651e5876c90501fb526b930', 'name': 'Backlog', 'closed': False, 'color': None, 'idBoard': '6651e5876c90501fb526b92f', 'pos': 65535, 'subscribed': False, 'softLimit': None}}]}}</msg>
 <arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-06-25T15:49:39.712294" elapsed="0.000515"/>
+<status status="PASS" start="2024-06-25T22:29:12.022868" elapsed="0.000688"/>
 </kw>
-<doc>Verify that a board can be created with a valid name.</doc>
-<tag>CreateBoard</tag>
-<status status="PASS" start="2024-06-25T15:49:38.275299" elapsed="1.437844"/>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${response} != {}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-06-25T22:29:12.023830" elapsed="0.001770"/>
+</kw>
+<doc>Users can search on the platform based on keyword and username</doc>
+<status status="PASS" start="2024-06-25T22:29:10.769836" elapsed="1.256031"/>
 </test>
-<test id="s1-t2" name="TC_Create_Board_02" line="20">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-06-25T15:49:39.714637" level="INFO">${url} = https://trello.com/1/boards</msg>
-<var>${url}</var>
-<arg>https://trello.com/1/boards</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-06-25T15:49:39.714352" elapsed="0.000333"/>
-</kw>
-<kw name="Make API Request" owner="CommonKeywords">
-<kw name="Make Request" owner="CustomKeywords">
-<msg time="2024-06-25T15:49:40.834484" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667abce41d62f33346bdc71d', 'name': 'hhhh', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, 'pinn...</msg>
-<var>${response}</var>
-<arg>${method}</arg>
-<arg>${url}</arg>
-<arg>${headers}</arg>
-<arg>${payload}</arg>
-<status status="PASS" start="2024-06-25T15:49:39.715835" elapsed="1.118697"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2024-06-25T15:49:40.834674" elapsed="0.000044"/>
-</return>
-<msg time="2024-06-25T15:49:40.834875" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667abce41d62f33346bdc71d', 'name': 'hhhh', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, 'pinn...</msg>
-<var>${response}</var>
-<arg>POST</arg>
-<arg>${url}</arg>
-<arg>${HEADERS}</arg>
-<arg>${NEW_BOARD_PAYLOAD_WITHOUT_NAME}</arg>
-<status status="PASS" start="2024-06-25T15:49:39.715122" elapsed="1.119777"/>
-</kw>
-<kw name="Should Not Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-06-25T15:49:40.835637" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<msg time="2024-06-25T15:49:40.835760" level="FAIL">200.0 == 200.0</msg>
-<arg>${response['status_code']}</arg>
-<arg>200</arg>
-<doc>Fails if objects are equal after converting them to real numbers.</doc>
-<status status="FAIL" start="2024-06-25T15:49:40.835123" elapsed="0.000760">200.0 == 200.0</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>${response}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-06-25T15:49:40.836135" elapsed="0.000043"/>
-</kw>
-<doc>Verify that creating a board without a name returns an appropriate error message.</doc>
-<tag>CreateBoard</tag>
-<status status="FAIL" start="2024-06-25T15:49:39.713569" elapsed="1.122837">200.0 == 200.0</status>
-</test>
-<test id="s1-t3" name="TC_Create_Board_03" line="28">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-06-25T15:49:40.837461" level="INFO">${url} = https://trello.com/1/boards</msg>
-<var>${url}</var>
-<arg>https://trello.com/1/boards</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-06-25T15:49:40.837212" elapsed="0.000287"/>
-</kw>
-<kw name="Make API Request" owner="CommonKeywords">
-<kw name="Make Request" owner="CustomKeywords">
-<msg time="2024-06-25T15:49:41.859793" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667abce50bee8e5c1bdabfaf', 'name': 'new board', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, ...</msg>
-<var>${response}</var>
-<arg>${method}</arg>
-<arg>${url}</arg>
-<arg>${headers}</arg>
-<arg>${payload}</arg>
-<status status="PASS" start="2024-06-25T15:49:40.838824" elapsed="1.021040"/>
-</kw>
-<return>
-<value>${response}</value>
-<status status="PASS" start="2024-06-25T15:49:41.859997" elapsed="0.000088"/>
-</return>
-<msg time="2024-06-25T15:49:41.860429" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667abce50bee8e5c1bdabfaf', 'name': 'new board', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, ...</msg>
-<var>${response}</var>
-<arg>POST</arg>
-<arg>${url}</arg>
-<arg>${HEADERS}</arg>
-<arg>${NEW_BOARD_PAYLOAD_WITH_NAME}</arg>
-<status status="PASS" start="2024-06-25T15:49:40.838094" elapsed="1.022500"/>
-</kw>
-<kw name="Should Not Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-06-25T15:49:41.862395" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<msg time="2024-06-25T15:49:41.862661" level="FAIL">200.0 == 200.0</msg>
-<arg>${response['status_code']}</arg>
-<arg>200</arg>
-<doc>Fails if objects are equal after converting them to real numbers.</doc>
-<status status="FAIL" start="2024-06-25T15:49:41.861224" elapsed="0.001588">200.0 == 200.0</status>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<arg>${response}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-06-25T15:49:41.863226" elapsed="0.000051"/>
-</kw>
-<doc>Verify that creating a board without  the same name will not work.</doc>
-<tag>CreateBoard</tag>
-<status status="FAIL" start="2024-06-25T15:49:40.836673" elapsed="1.026997">200.0 == 200.0</status>
-</test>
-<status status="FAIL" start="2024-06-25T15:49:38.136939" elapsed="3.727725"/>
+<status status="PASS" start="2024-06-25T22:29:09.906364" elapsed="2.120116"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="2" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="2" skip="0">CreateBoard</stat>
 </tag>
 <suite>
-<stat pass="1" fail="2" skip="0" id="s1" name="TestSuite CreateBoard">TestSuite CreateBoard</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="TestSuite Search">TestSuite Search</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-06-25T15:49:38.154284" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-06-25T22:29:09.965189" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>
