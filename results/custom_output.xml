@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-06-20T23:39:49.533183" rpa="false" schemaversion="5">
+<suite id="s1" name="TestSuite" source="/home/hetu/Desktop/4th-year/Assignment/FTP/tests/TestSuite.robot">
+<test id="s1-t1" name="Test GET Endpoint" line="11">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-20T23:39:49.665447" level="INFO">${url} = https://trello.com/1/boards/6651e5876c90501fb526b92f/plugins?filter=enabled</msg>
+<var>${url}</var>
+<arg>https://trello.com/1/boards/6651e5876c90501fb526b92f/plugins?filter=enabled</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-20T23:39:49.665277" elapsed="0.000197"/>
+</kw>
+<kw name="Make API Request" owner="CommonKeywords">
+<kw name="Make Request" owner="CustomKeywords">
+<msg time="2024-06-20T23:44:24.666354" level="INFO">${response} = [{'id': '5935cab6b26816f9d49fd814', 'idOrganizationOwner': '5a999cd36066c584c097f193', 'author': 'Trello Inc', 'capabilities': ['board-buttons', 'card-buttons', 'callback', 'show-settings', 'remove-da...</msg>
+<var>${response}</var>
+<arg>${method}</arg>
+<arg>${url}</arg>
+<arg>${headers}</arg>
+<arg>${payload}</arg>
+<status status="PASS" start="2024-06-20T23:39:49.666009" elapsed="275.000479"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2024-06-20T23:44:24.666754" elapsed="0.000122"/>
+</return>
+<msg time="2024-06-20T23:44:24.667370" level="INFO">${response} = [{'id': '5935cab6b26816f9d49fd814', 'idOrganizationOwner': '5a999cd36066c584c097f193', 'author': 'Trello Inc', 'capabilities': ['board-buttons', 'card-buttons', 'callback', 'show-settings', 'remove-da...</msg>
+<var>${response}</var>
+<arg>GET</arg>
+<arg>${url}</arg>
+<arg>${HEADERS}</arg>
+<status status="PASS" start="2024-06-20T23:39:49.665711" elapsed="275.001716"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-20T23:44:24.668456" level="INFO">[{'id': '5935cab6b26816f9d49fd814', 'idOrganizationOwner': '5a999cd36066c584c097f193', 'author': 'Trello Inc', 'capabilities': ['board-buttons', 'card-buttons', 'callback', 'show-settings', 'remove-data'], 'capabilitiesOptions': [], 'categories': ['automation', 'board-utilities'], 'iframeConnectorUrl': 'https://app.butlerfortrello.com/0da6922c6445f32243c9f470891ed898601b98d9/powerup-loader.html', 'name': 'Butler', 'privacyUrl': 'https://trello.com/privacy', 'public': True, 'moderatedState': 'hidden', 'supportEmail': 'https://trello.com/contact#/', 'url': 'https://butlerfortrello.com/powerup/manifest.json', 'tags': ['promotional'], 'heroImageUrl': {'@2x': 'https://trello-attachments.s3.amazonaws.com/5b56280b7694ac008082fe38/5b5628c50beac7454583d0e7/b91a7f0ee4fbf209170b398f1b7b0ddd/Butler%402x.jpg', '_id': '5b56299e899076ef9f518213', '@1x': 'https://trello-attachments.s3.amazonaws.com/5b56280b7694ac008082fe38/5b5628c50beac7454583d0e7/b729e81530b38491b0daefaa2df95d8c/Butler.jpg'}, 'claimedDomains': [], 'icon': {'url': 'https://app.butlerfortrello.com/0da6922c6445f32243c9f470891ed898601b98d9/img/butler-icon.svg'}, 'listing': {'name': 'Butler', 'locale': 'en-US', 'description': '**Work smarter and faster with the power of Butler, Trello’s built-in automation, added to your boards.**\n\nLet’s face it, inefficiencies get multiplied when team members have to do the same repetitive tasks. With Butler, anyone can create simple natural language commands to make work auto-magically happen on their boards, saving tons of time and bringing process to any team’s workflow.\n\nBest of all, Butler is available to all users, and advanced features are included at no additional cost in Business Class, Enterprise, and Gold subscriptions. [Learn more](https://trello.com/pricing)\n\nWith Butler you can create:\n\n- **Rules** - Set rules that trigger automatically when actions are performed on boards that perform predefined tasks.\n- **Card Buttons** - Custom card buttons perform tasks and actions when clicked.\n- **Board Buttons** - Board buttons execute tasks across an entire board.\n- **Scheduled Commands** - Organize, clean up, and update boards at set dates and times so that you don’t need to think about it. (Available with Business Class, Enterprise, and Gold)\n- **Date Commands** - Set commands to automatically trigger actions around upcoming or past due dates. (Available with Business Class, Enterprise, and Gold)\n\nButler can perform actions, such as:\n\n- Moving, archiving, or copying cards\n- Adding or removing labels, attachments, labels, and more\n- Setting, changing, or updating due dates\n- Adding, completing, or resetting checklists\n- Joining, subscribing, and adding/removing members from cards\n- Renaming cards, editing descriptions, adding comments\n- Modifying, adding, or removing Custom Field data\n- Sorting lists by a variety of criteria\n- Interacting with related cards\n- Sending emails (Available with Business Class, Enterprise, and Gold)\n- Gets, posts, and puts to URLs (Available with Business Class, Enterprise, and Gold)\n- And so much more!\n\nWant to learn more about Butler? [Check out the Trello blog.](https://blog.trello.com/butler-power-up-trello-automation)\n\n##Video##\n\n[![Video](https://trello-attachments.s3.amazonaws.com/5c754b933c3c6f6e427e8b16/5c8821e72fad5826106ab8a9/7bb8594495bc76252af7c02409ab15d7/ButlerTitleFrame.png)](https://www.youtube.com/watch?v=0KxlGW-gzK0)\n\nNote: video opens in a new tab.', 'overview': 'Work smarter and faster with the power of Butler, Trello’s built-in automation.'}, 'isCompliantWithPrivacyStandards': True, 'usageBrackets': {'boards': 100000}}, {'id': '5c2462c384ab8949b1724a20', 'idOrganizationOwner': '5a999cd36066c584c097f193', 'author': 'Trello Inc', 'capabilities': [], 'capabilitiesOptions': [], 'categories': ['it-project-management', 'board-utilities'], 'iframeConnectorUrl': 'https://list-limits.trello.services/index.html?ver=993061e3763a', 'name': 'List Limits', 'privacyUrl': 'http://trello.com/privacy', 'public': True, 'moderatedState': None, 'supportEmail': 'https://trello.com/contact#/', 'tags': ['essential', 'made-by-trello'], 'heroImageUrl': {'_id': '5f1eee65043e80694a3243c1', '@1x': 'https://plugin.trello.services/images/list-limits.jpg', '@2x': 'https://plugin.trello.services/images/list-limits@2x.jpg'}, 'claimedDomains': [], 'icon': {'url': 'https://list-limits.trello.services/images/list-limits.svg'}, 'listing': {'name': 'List Limits', 'locale': 'en-us', 'description': 'Set a limit on your lists and we\'ll highlight the list if the number of cards in it passes this limit.\n\n![Once enabled, you will find the "Set List Limit..." option in the List actions menu.](https://plugin.trello.services/images/list-limits-demo-1.gif)\n\n![List is highlighted when you exceed the List Limit.](https://plugin.trello.services/images/list-limits-demo-2.gif)\n\n[Check out this blog to find out how to optimize your team\'s process with work-in-progress limits.](https://www.atlassian.com/agile/kanban/wip-limits)', 'overview': 'Set a limit on your lists to highlight them if the number of cards in it passes the limit.'}, 'isCompliantWithPrivacyStandards': None, 'usageBrackets': {'boards': 1000000}}]</msg>
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-20T23:44:24.667909" elapsed="0.000769"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${response} != {}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2024-06-20T23:44:24.668991" elapsed="0.001450"/>
+</kw>
+<status status="PASS" start="2024-06-20T23:39:49.664662" elapsed="275.006119"/>
+</test>
+<test id="s1-t2" name="Test POST Endpoint" line="17">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-20T23:44:24.672165" level="INFO">${url} = https://trello.com/1/boards</msg>
+<var>${url}</var>
+<arg>https://trello.com/1/boards</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-20T23:44:24.671883" elapsed="0.000331"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-20T23:44:24.673221" level="INFO">${payload} = {'name': 'New Board', 'defaultLabels': 'true', 'defaultLists': 'true', 'keepFromSource': 'none', 'prefs_permissionLevel': 'private'}</msg>
+<var>${payload}</var>
+<arg>name=New Board</arg>
+<arg>defaultLabels=true</arg>
+<arg>defaultLists=true</arg>
+<arg>keepFromSource=none</arg>
+<arg>prefs_permissionLevel=private</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-20T23:44:24.672532" elapsed="0.000847"/>
+</kw>
+<kw name="Make API Request" owner="CommonKeywords">
+<kw name="Make Request" owner="CustomKeywords">
+<msg time="2024-06-20T23:44:25.687652" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards</msg>
+<var>${response}</var>
+<arg>${method}</arg>
+<arg>${url}</arg>
+<arg>${headers}</arg>
+<arg>${payload}</arg>
+<status status="FAIL" start="2024-06-20T23:44:24.675737" elapsed="1.013187">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards</status>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2024-06-20T23:44:25.689119" elapsed="0.000041"/>
+</return>
+<var>${response}</var>
+<arg>POST</arg>
+<arg>${url}</arg>
+<arg>${HEADERS}</arg>
+<arg>${payload}</arg>
+<status status="FAIL" start="2024-06-20T23:44:24.674089" elapsed="1.015288">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-06-20T23:44:25.689758" elapsed="0.000056"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${response} != {}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2024-06-20T23:44:25.690096" elapsed="0.000035"/>
+</kw>
+<status status="FAIL" start="2024-06-20T23:44:24.671245" elapsed="1.019202">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards</status>
+</test>
+<test id="s1-t3" name="Test PUT Endpoint" line="24">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-20T23:44:25.692106" level="INFO">${url} = https://trello.com/1/boards/6651e5876c90501fb526b92f</msg>
+<var>${url}</var>
+<arg>https://trello.com/1/boards/6651e5876c90501fb526b92f</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-20T23:44:25.691820" elapsed="0.000327"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-06-20T23:44:25.692609" level="INFO">${payload} = {'name': 'Updated Board Name'}</msg>
+<var>${payload}</var>
+<arg>name=Updated Board Name</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-06-20T23:44:25.692376" elapsed="0.000260"/>
+</kw>
+<kw name="Make API Request" owner="CommonKeywords">
+<kw name="Make Request" owner="CustomKeywords">
+<msg time="2024-06-20T23:44:26.452241" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards/6651e5876c90501fb526b92f</msg>
+<var>${response}</var>
+<arg>${method}</arg>
+<arg>${url}</arg>
+<arg>${headers}</arg>
+<arg>${payload}</arg>
+<status status="FAIL" start="2024-06-20T23:44:25.693272" elapsed="0.759401">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards/6651e5876c90501fb526b92f</status>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2024-06-20T23:44:26.452799" elapsed="0.000031"/>
+</return>
+<var>${response}</var>
+<arg>PUT</arg>
+<arg>${url}</arg>
+<arg>${HEADERS}</arg>
+<arg>${payload}</arg>
+<status status="FAIL" start="2024-06-20T23:44:25.692872" elapsed="0.760098">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards/6651e5876c90501fb526b92f</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-06-20T23:44:26.453228" elapsed="0.000043"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${response} != {}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2024-06-20T23:44:26.453474" elapsed="0.000024"/>
+</kw>
+<status status="FAIL" start="2024-06-20T23:44:25.690833" elapsed="0.762894">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards/6651e5876c90501fb526b92f</status>
+</test>
+<test id="s1-t4" name="Test DELETE Endpoint" line="31">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-20T23:44:26.454607" level="INFO">${url} = https://trello.com/1/boards/6651e5876c90501fb526b92f</msg>
+<var>${url}</var>
+<arg>https://trello.com/1/boards/6651e5876c90501fb526b92f</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-20T23:44:26.454404" elapsed="0.000235"/>
+</kw>
+<kw name="Make API Request" owner="CommonKeywords">
+<kw name="Make Request" owner="CustomKeywords">
+<msg time="2024-06-20T23:44:27.069760" level="FAIL">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards/6651e5876c90501fb526b92f</msg>
+<var>${response}</var>
+<arg>${method}</arg>
+<arg>${url}</arg>
+<arg>${headers}</arg>
+<arg>${payload}</arg>
+<status status="FAIL" start="2024-06-20T23:44:26.455386" elapsed="0.614986">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards/6651e5876c90501fb526b92f</status>
+</kw>
+<return>
+<value>${response}</value>
+<status status="NOT RUN" start="2024-06-20T23:44:27.070534" elapsed="0.000037"/>
+</return>
+<var>${response}</var>
+<arg>DELETE</arg>
+<arg>${url}</arg>
+<arg>${HEADERS}</arg>
+<status status="FAIL" start="2024-06-20T23:44:26.454909" elapsed="0.615868">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards/6651e5876c90501fb526b92f</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-06-20T23:44:27.071186" elapsed="0.000050"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${response} != {}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" start="2024-06-20T23:44:27.071497" elapsed="0.000037"/>
+</kw>
+<status status="FAIL" start="2024-06-20T23:44:26.454029" elapsed="0.617837">HTTPError: 403 Client Error: Forbidden for url: https://trello.com/1/boards/6651e5876c90501fb526b92f</status>
+</test>
+<status status="FAIL" start="2024-06-20T23:39:49.533953" elapsed="277.538800"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="3" skip="0" id="s1" name="TestSuite">TestSuite</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-06-20T23:39:49.549337" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-06-20T22:39:13.506159" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Tutorial Report" source="/home/hetu/Desktop/4th-year/Assignment/FTP/tests/testSuite1.robot">
+<kw name="Setup suite" type="SETUP">
+<kw name="Log datetime information">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-06-20T22:39:14.245538" level="INFO">${date} = 2024-06-20 22:39:14.245</msg>
+<var>${date}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-06-20T22:39:14.245322" elapsed="0.000246"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-20T22:39:14.245818" level="INFO">2024-06-20 22:39:14.245</msg>
+<arg>${date}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-20T22:39:14.245683" elapsed="0.000186"/>
+</kw>
+<status status="PASS" start="2024-06-20T22:39:14.244755" elapsed="0.001173"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-20T22:39:14.246088" level="INFO">Starting the test</msg>
+<arg>Starting the test</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-20T22:39:14.246002" elapsed="0.000116"/>
+</kw>
+<status status="PASS" start="2024-06-20T22:39:14.244497" elapsed="0.001666"/>
+</kw>
+<test id="s1-t1" name="Check geolocation of connection" line="18">
+<kw name="Locate my ip">
+<kw name="Detect My Public Ip" owner="ip_detector">
+<msg time="2024-06-20T22:39:14.889832" level="INFO">${IP} = 196.190.91.167</msg>
+<var>${IP}</var>
+<status status="PASS" start="2024-06-20T22:39:14.246780" elapsed="0.643137"/>
+</kw>
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-06-20T22:39:14.891397" level="INFO">Creating Session using : alias=mysession, url=https://ipinfo.io, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${LOCATEAPI}</arg>
+<arg>verify=true</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-06-20T22:39:14.890359" elapsed="0.001606"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-06-20T22:39:15.583122" level="INFO">GET Request : url=https://ipinfo.io/196.190.91.167/geo 
+ path_url=/196.190.91.167/geo 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-06-20T22:39:15.583322" level="INFO">GET Response : url=https://ipinfo.io/196.190.91.167/geo 
+ status=200, reason=OK 
+ headers={'server': 'nginx/1.24.0', 'date': 'Thu, 20 Jun 2024 19:39:15 GMT', 'content-type': 'application/json; charset=utf-8', 'Content-Length': '241', 'access-control-allow-origin': '*', 'x-frame-options': 'SAMEORIGIN', 'x-xss-protection': '1; mode=block', 'x-content-type-options': 'nosniff', 'referrer-policy': 'strict-origin-when-cross-origin', 'x-envoy-upstream-service-time': '2', 'via': '1.1 google', 'strict-transport-security': 'max-age=2592000; includeSubDomains', 'Alt-Svc': 'h3=":443"; ma=2592000,h3-29=":443"; ma=2592000'} 
+ body={
+  "ip": "196.190.91.167",
+  "city": "Addis Ababa",
+  "region": "Addis Ababa",
+  "country": "ET",
+  "loc": "9.0250,38.7469",
+  "org": "AS24757 Ethio Telecom",
+  "timezone": "Africa/Addis_Ababa",
+  "readme": "https://ipinfo.io/missingauth"
+} 
+ </msg>
+<msg time="2024-06-20T22:39:15.583671" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/${IP}/geo</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-06-20T22:39:14.892383" elapsed="0.691349"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-06-20T22:39:15.584022" elapsed="0.000619"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Check Geolocation">
+<kw name="Get Value From Json ${json}">
+<msg time="2024-06-20T22:39:15.590464" level="FAIL">No keyword with name 'Get Value From Json ${json}' found. Did you try using keyword 'JSONLibrary.Get Value From Json', 'RequestsLibrary.GET' or 'ip_detector.Get' and forgot to use enough whitespace between keyword and arguments?</msg>
+<var>${location}</var>
+<arg>$.city</arg>
+<arg>fail_on_empty=${True}</arg>
+<status status="FAIL" start="2024-06-20T22:39:15.590386" elapsed="0.000160">No keyword with name 'Get Value From Json ${json}' found. Did you try using keyword 'JSONLibrary.Get Value From Json', 'RequestsLibrary.GET' or 'ip_detector.Get' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<kw name="Get Value From Json" owner="JSONLibrary">
+<var>${coordinates}</var>
+<arg>${json}</arg>
+<arg>$.loc</arg>
+<arg>fail_on_empty=${True}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<status status="NOT RUN" start="2024-06-20T22:39:15.590775" elapsed="0.000062"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${coordinates}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-06-20T22:39:15.590967" elapsed="0.000024"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${location}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2024-06-20T22:39:15.591139" elapsed="0.000030"/>
+</kw>
+<arg>${response.json()}</arg>
+<status status="FAIL" start="2024-06-20T22:39:15.586095" elapsed="0.005281">No keyword with name 'Get Value From Json ${json}' found. Did you try using keyword 'JSONLibrary.Get Value From Json', 'RequestsLibrary.GET' or 'ip_detector.Get' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<arg>"${response}" != "${EMPTY}"</arg>
+<arg>Check Geolocation</arg>
+<arg>${response.json()}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2024-06-20T22:39:15.584907" elapsed="0.006561">No keyword with name 'Get Value From Json ${json}' found. Did you try using keyword 'JSONLibrary.Get Value From Json', 'RequestsLibrary.GET' or 'ip_detector.Get' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<status status="FAIL" start="2024-06-20T22:39:14.246579" elapsed="1.345029">No keyword with name 'Get Value From Json ${json}' found. Did you try using keyword 'JSONLibrary.Get Value From Json', 'RequestsLibrary.GET' or 'ip_detector.Get' and forgot to use enough whitespace between keyword and arguments?</status>
+</kw>
+<timeout value="2 minutes"/>
+<status status="FAIL" start="2024-06-20T22:39:14.246264" elapsed="1.345666">No keyword with name 'Get Value From Json ${json}' found. Did you try using keyword 'JSONLibrary.Get Value From Json', 'RequestsLibrary.GET' or 'ip_detector.Get' and forgot to use enough whitespace between keyword and arguments?</status>
+</test>
+<test id="s1-t2" name="Convert message to yoda version" line="21">
+<kw name="Convert to Yoda Speech">
+<msg time="2024-06-20T22:39:15.594012" level="FAIL">Variable '${location}' not found.</msg>
+<arg>${location}</arg>
+<status status="FAIL" start="2024-06-20T22:39:15.593109" elapsed="0.000972">Variable '${location}' not found.</status>
+</kw>
+<timeout value="2 minutes"/>
+<status status="FAIL" start="2024-06-20T22:39:15.592475" elapsed="0.001839">Variable '${location}' not found.</status>
+</test>
+<kw name="Teardown suite" type="TEARDOWN">
+<kw name="Log datetime information">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-06-20T22:39:15.595432" level="INFO">${date} = 2024-06-20 22:39:15.595</msg>
+<var>${date}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-06-20T22:39:15.595254" elapsed="0.000207"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-20T22:39:15.595685" level="INFO">2024-06-20 22:39:15.595</msg>
+<arg>${date}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-20T22:39:15.595566" elapsed="0.000154"/>
+</kw>
+<status status="PASS" start="2024-06-20T22:39:15.595055" elapsed="0.000782"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-06-20T22:39:15.595988" level="INFO">Test execution completed</msg>
+<arg>Test execution completed</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-06-20T22:39:15.595912" elapsed="0.000107"/>
+</kw>
+<status status="PASS" start="2024-06-20T22:39:15.594816" elapsed="0.001243"/>
+</kw>
+<doc>Hello!
+This is an example test suite for testing the requests library keywords along with built-in library keywords</doc>
+<status status="FAIL" start="2024-06-20T22:39:13.506967" elapsed="2.089113"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Robot Tutorial Report">Robot Tutorial Report</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
