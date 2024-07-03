@@ -1,100 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-06-25T22:30:32.823389" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-07-03T07:22:34.510454" rpa="false" schemaversion="5">
 <suite id="s1" name="TestSuite CreateList" source="/home/hetu/Desktop/4th-year/Assignment/FTP/tests/TestSuite_CreateList.robot">
 <test id="s1-t1" name="TC_Create_List_04" line="11">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-06-25T22:30:32.970604" level="INFO">${url} = https://trello.com/1/lists</msg>
+<msg time="2024-07-03T07:22:34.648699" level="INFO">${url} = https://trello.com/1/lists</msg>
 <var>${url}</var>
 <arg>https://trello.com/1/lists</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-06-25T22:30:32.970448" elapsed="0.000187"/>
+<status status="PASS" start="2024-07-03T07:22:34.648497" elapsed="0.000233"/>
 </kw>
 <kw name="Make API Request" owner="CommonKeywords">
 <kw name="Make Request" owner="CustomKeywords">
-<msg time="2024-06-25T22:30:33.743438" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667b1ad989e9ea823c553603', 'name': 'test list', 'closed': False, 'color': None, 'idBoard': '667abce41d62f33346bdc71d', 'pos': 65536.125, 'limits': {}}}</msg>
+<msg time="2024-07-03T07:22:35.513409" level="INFO">${response} = {'status_code': 200, 'json': {'id': '6684d20b384938c91bdfcc39', 'name': 'test list', 'closed': False, 'color': None, 'idBoard': '667abce41d62f33346bdc71d', 'pos': 81920, 'limits': {}}}</msg>
 <var>${response}</var>
 <arg>${method}</arg>
 <arg>${url}</arg>
 <arg>${headers}</arg>
 <arg>${payload}</arg>
-<status status="PASS" start="2024-06-25T22:30:32.971231" elapsed="0.772292"/>
+<status status="PASS" start="2024-07-03T07:22:34.649368" elapsed="0.864183"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2024-06-25T22:30:33.743697" elapsed="0.000096"/>
+<status status="PASS" start="2024-07-03T07:22:35.513757" elapsed="0.000100"/>
 </return>
-<msg time="2024-06-25T22:30:33.744112" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667b1ad989e9ea823c553603', 'name': 'test list', 'closed': False, 'color': None, 'idBoard': '667abce41d62f33346bdc71d', 'pos': 65536.125, 'limits': {}}}</msg>
+<msg time="2024-07-03T07:22:35.514190" level="INFO">${response} = {'status_code': 200, 'json': {'id': '6684d20b384938c91bdfcc39', 'name': 'test list', 'closed': False, 'color': None, 'idBoard': '667abce41d62f33346bdc71d', 'pos': 81920, 'limits': {}}}</msg>
 <var>${response}</var>
 <arg>POST</arg>
 <arg>${url}</arg>
 <arg>${HEADERS}</arg>
 <arg>${NEW_LIST_PAYLOAD_WITH_EXISTING_BOARD}</arg>
-<status status="PASS" start="2024-06-25T22:30:32.970872" elapsed="0.773303"/>
+<status status="PASS" start="2024-07-03T07:22:34.649021" elapsed="0.865225"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-06-25T22:30:33.746064" level="INFO">Argument types are:
+<msg time="2024-07-03T07:22:35.515963" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response['status_code']}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-06-25T22:30:33.744655" elapsed="0.001549"/>
+<status status="PASS" start="2024-07-03T07:22:35.514766" elapsed="0.001352"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-06-25T22:30:33.746925" level="INFO">{'status_code': 200, 'json': {'id': '667b1ad989e9ea823c553603', 'name': 'test list', 'closed': False, 'color': None, 'idBoard': '667abce41d62f33346bdc71d', 'pos': 65536.125, 'limits': {}}}</msg>
+<msg time="2024-07-03T07:22:35.517181" level="INFO">{'status_code': 200, 'json': {'id': '6684d20b384938c91bdfcc39', 'name': 'test list', 'closed': False, 'color': None, 'idBoard': '667abce41d62f33346bdc71d', 'pos': 81920, 'limits': {}}}</msg>
 <arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-06-25T22:30:33.746612" elapsed="0.000415"/>
+<status status="PASS" start="2024-07-03T07:22:35.516707" elapsed="0.000555"/>
 </kw>
 <doc>To verify that a new list can be successfully created on a specified Trello board</doc>
 <tag>CreateList</tag>
-<status status="PASS" start="2024-06-25T22:30:32.969808" elapsed="0.777534"/>
+<status status="PASS" start="2024-07-03T07:22:34.647783" elapsed="0.869723"/>
 </test>
 <test id="s1-t2" name="TC_Create_List_05" line="19">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-06-25T22:30:33.748972" level="INFO">${url} = https://trello.com/1/lists</msg>
+<msg time="2024-07-03T07:22:35.518564" level="INFO">${url} = https://trello.com/1/lists</msg>
 <var>${url}</var>
 <arg>https://trello.com/1/lists</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-06-25T22:30:33.748674" elapsed="0.000347"/>
+<status status="PASS" start="2024-07-03T07:22:35.518319" elapsed="0.000288"/>
 </kw>
 <kw name="Make API Request" owner="CommonKeywords">
 <kw name="Make Request" owner="CustomKeywords">
-<msg time="2024-06-25T22:30:34.352763" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/lists</msg>
+<msg time="2024-07-03T07:22:36.529575" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/lists</msg>
 <var>${response}</var>
 <arg>${method}</arg>
 <arg>${url}</arg>
 <arg>${headers}</arg>
 <arg>${payload}</arg>
-<status status="FAIL" start="2024-06-25T22:30:33.750424" elapsed="0.603438">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/lists</status>
+<status status="FAIL" start="2024-07-03T07:22:35.519295" elapsed="1.011378">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/lists</status>
 </kw>
 <return>
 <value>${response}</value>
-<status status="NOT RUN" start="2024-06-25T22:30:34.354052" elapsed="0.000039"/>
+<status status="NOT RUN" start="2024-07-03T07:22:36.530861" elapsed="0.000036"/>
 </return>
 <var>${response}</var>
 <arg>POST</arg>
 <arg>${url}</arg>
 <arg>${HEADERS}</arg>
 <arg>${NEW_LIST_PAYLOAD_WITH_FALSE_BOARD_ID}</arg>
-<status status="FAIL" start="2024-06-25T22:30:33.749433" elapsed="0.604894">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/lists</status>
+<status status="FAIL" start="2024-07-03T07:22:35.518901" elapsed="1.012230">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/lists</status>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
 <arg>${response['status_code']}</arg>
 <arg>400</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2024-06-25T22:30:34.354743" elapsed="0.000067"/>
+<status status="NOT RUN" start="2024-07-03T07:22:36.531555" elapsed="0.000070"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-06-25T22:30:34.355273" elapsed="0.000063"/>
+<status status="NOT RUN" start="2024-07-03T07:22:36.532077" elapsed="0.000046"/>
 </kw>
 <doc>To verify that a new list can be successfully created on a specified Trello board</doc>
 <tag>CreateList</tag>
-<status status="FAIL" start="2024-06-25T22:30:33.747833" elapsed="0.608013">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/lists</status>
+<status status="FAIL" start="2024-07-03T07:22:35.517808" elapsed="1.014712">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/lists</status>
 </test>
-<status status="FAIL" start="2024-06-25T22:30:32.824650" elapsed="1.531995"/>
+<status status="FAIL" start="2024-07-03T07:22:34.511233" elapsed="2.022137"/>
 </suite>
 <statistics>
 <total>
@@ -108,6 +108,6 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2024-06-25T22:30:32.850607" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-07-03T07:22:34.527454" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>

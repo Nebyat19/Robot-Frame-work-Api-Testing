@@ -1,152 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-06-25T22:30:30.029111" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-07-03T07:22:30.999981" rpa="false" schemaversion="5">
 <suite id="s1" name="TestSuite CreateBoard" source="/home/hetu/Desktop/4th-year/Assignment/FTP/tests/TestSuite_CreateBoard.robot">
 <test id="s1-t1" name="TC_Create_Board_01" line="11">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-06-25T22:30:30.182911" level="INFO">${url} = https://trello.com/1/boards</msg>
+<msg time="2024-07-03T07:22:31.127276" level="INFO">${url} = https://trello.com/1/boards</msg>
 <var>${url}</var>
 <arg>https://trello.com/1/boards</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-06-25T22:30:30.182747" elapsed="0.000193"/>
+<status status="PASS" start="2024-07-03T07:22:31.127107" elapsed="0.000198"/>
 </kw>
 <kw name="Make API Request" owner="CommonKeywords">
 <kw name="Make Request" owner="CustomKeywords">
-<msg time="2024-06-25T22:30:31.103728" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</msg>
+<msg time="2024-07-03T07:22:32.232284" level="INFO">${response} = {'status_code': 200, 'json': {'id': '6684d207b93c553554f12fdf', 'name': 'new board', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, ...</msg>
 <var>${response}</var>
 <arg>${method}</arg>
 <arg>${url}</arg>
 <arg>${headers}</arg>
 <arg>${payload}</arg>
-<status status="FAIL" start="2024-06-25T22:30:30.183491" elapsed="0.964437">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</status>
+<status status="PASS" start="2024-07-03T07:22:31.127860" elapsed="1.104504"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="NOT RUN" start="2024-06-25T22:30:31.148165" elapsed="0.000049"/>
+<status status="PASS" start="2024-07-03T07:22:32.232528" elapsed="0.000122"/>
 </return>
+<msg time="2024-07-03T07:22:32.233004" level="INFO">${response} = {'status_code': 200, 'json': {'id': '6684d207b93c553554f12fdf', 'name': 'new board', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, ...</msg>
 <var>${response}</var>
 <arg>POST</arg>
 <arg>${url}</arg>
 <arg>${HEADERS}</arg>
 <arg>${NEW_BOARD_PAYLOAD_WITH_NAME}</arg>
-<status status="FAIL" start="2024-06-25T22:30:30.183161" elapsed="0.965434">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</status>
+<status status="PASS" start="2024-07-03T07:22:31.127537" elapsed="1.105521"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-07-03T07:22:32.234553" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
 <arg>${response['status_code']}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2024-06-25T22:30:31.149058" elapsed="0.000060"/>
+<status status="PASS" start="2024-07-03T07:22:32.233439" elapsed="0.001247"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
+<msg time="2024-07-03T07:22:32.235380" level="INFO">{'status_code': 200, 'json': {'id': '6684d207b93c553554f12fdf', 'name': 'new board', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, 'pinned': False, 'url': 'https://trello.com/b/rzh6Giii/new-board', 'shortUrl': 'https://trello.com/b/rzh6Giii', 'prefs': {'permissionLevel': 'org', 'hideVotes': False, 'voting': 'disabled', 'comments': 'members', 'invitations': 'members', 'selfJoin': True, 'cardCovers': True, 'cardCounts': False, 'isTemplate': False, 'cardAging': 'regular', 'calendarFeedEnabled': False, 'hiddenPluginBoardButtons': [], 'switcherViews': [{'viewType': 'Board', 'enabled': True}, {'viewType': 'Table', 'enabled': True}, {'viewType': 'Calendar', 'enabled': False}, {'viewType': 'Dashboard', 'enabled': False}, {'viewType': 'Timeline', 'enabled': False}, {'viewType': 'Map', 'enabled': False}], 'background': 'blue', 'backgroundColor': '#0079BF', 'backgroundImage': None, 'backgroundTile': False, 'backgroundBrightness': 'dark', 'sharedSourceUrl': None, 'backgroundImageScaled': None, 'backgroundBottomColor': '#0079BF', 'backgroundTopColor': '#0079BF', 'canBePublic': True, 'canBeEnterprise': True, 'canBeOrg': True, 'canBePrivate': True, 'canInvite': True}, 'labelNames': {'green': '', 'yellow': '', 'orange': '', 'red': '', 'purple': '', 'blue': '', 'sky': '', 'lime': '', 'pink': '', 'black': '', 'green_dark': '', 'yellow_dark': '', 'orange_dark': '', 'red_dark': '', 'purple_dark': '', 'blue_dark': '', 'sky_dark': '', 'lime_dark': '', 'pink_dark': '', 'black_dark': '', 'green_light': '', 'yellow_light': '', 'orange_light': '', 'red_light': '', 'purple_light': '', 'blue_light': '', 'sky_light': '', 'lime_light': '', 'pink_light': '', 'black_light': ''}, 'limits': {}}}</msg>
 <arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-06-25T22:30:31.149452" elapsed="0.000048"/>
+<status status="PASS" start="2024-07-03T07:22:32.235021" elapsed="0.000479"/>
 </kw>
 <doc>Verify that a board can be created with a valid name.</doc>
 <tag>CreateBoard</tag>
-<status status="FAIL" start="2024-06-25T22:30:30.182146" elapsed="0.967747">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</status>
+<status status="PASS" start="2024-07-03T07:22:31.126474" elapsed="1.109319"/>
 </test>
 <test id="s1-t2" name="TC_Create_Board_02" line="20">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-06-25T22:30:31.151503" level="INFO">${url} = https://trello.com/1/boards</msg>
+<msg time="2024-07-03T07:22:32.236656" level="INFO">${url} = https://trello.com/1/boards</msg>
 <var>${url}</var>
 <arg>https://trello.com/1/boards</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-06-25T22:30:31.151106" elapsed="0.000448"/>
+<status status="PASS" start="2024-07-03T07:22:32.236520" elapsed="0.000157"/>
 </kw>
 <kw name="Make API Request" owner="CommonKeywords">
 <kw name="Make Request" owner="CustomKeywords">
-<msg time="2024-06-25T22:30:31.930127" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</msg>
+<msg time="2024-07-03T07:22:33.253963" level="INFO">${response} = {'status_code': 200, 'json': {'id': '6684d20863587f98ca379b9b', 'name': 'hhhh', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, 'pinn...</msg>
 <var>${response}</var>
 <arg>${method}</arg>
 <arg>${url}</arg>
 <arg>${headers}</arg>
 <arg>${payload}</arg>
-<status status="FAIL" start="2024-06-25T22:30:31.152732" elapsed="0.778230">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</status>
+<status status="PASS" start="2024-07-03T07:22:32.237165" elapsed="1.016887"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="NOT RUN" start="2024-06-25T22:30:31.931249" elapsed="0.000059"/>
+<status status="PASS" start="2024-07-03T07:22:33.254198" elapsed="0.000080"/>
 </return>
+<msg time="2024-07-03T07:22:33.254595" level="INFO">${response} = {'status_code': 200, 'json': {'id': '6684d20863587f98ca379b9b', 'name': 'hhhh', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, 'pinn...</msg>
 <var>${response}</var>
 <arg>POST</arg>
 <arg>${url}</arg>
 <arg>${HEADERS}</arg>
 <arg>${NEW_BOARD_PAYLOAD_WITHOUT_NAME}</arg>
-<status status="FAIL" start="2024-06-25T22:30:31.151970" elapsed="0.779657">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</status>
+<status status="PASS" start="2024-07-03T07:22:32.236849" elapsed="1.017799"/>
 </kw>
 <kw name="Should Not Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-07-03T07:22:33.256063" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2024-07-03T07:22:33.256281" level="FAIL">200.0 == 200.0</msg>
 <arg>${response['status_code']}</arg>
 <arg>200</arg>
 <doc>Fails if objects are equal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2024-06-25T22:30:31.932435" elapsed="0.000071"/>
+<status status="FAIL" start="2024-07-03T07:22:33.255046" elapsed="0.001459">200.0 == 200.0</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-06-25T22:30:31.932928" elapsed="0.000061"/>
+<status status="NOT RUN" start="2024-07-03T07:22:33.256963" elapsed="0.000050"/>
 </kw>
 <doc>Verify that creating a board without a name returns an appropriate error message.</doc>
 <tag>CreateBoard</tag>
-<status status="FAIL" start="2024-06-25T22:30:31.150358" elapsed="0.783122">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</status>
+<status status="FAIL" start="2024-07-03T07:22:32.236203" elapsed="1.021217">200.0 == 200.0</status>
 </test>
 <test id="s1-t3" name="TC_Create_Board_03" line="28">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-06-25T22:30:31.936458" level="INFO">${url} = https://trello.com/1/boards</msg>
+<msg time="2024-07-03T07:22:33.258429" level="INFO">${url} = https://trello.com/1/boards</msg>
 <var>${url}</var>
 <arg>https://trello.com/1/boards</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-06-25T22:30:31.936026" elapsed="0.000498"/>
+<status status="PASS" start="2024-07-03T07:22:33.258295" elapsed="0.000153"/>
 </kw>
 <kw name="Make API Request" owner="CommonKeywords">
 <kw name="Make Request" owner="CustomKeywords">
-<msg time="2024-06-25T22:30:32.561661" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</msg>
+<msg time="2024-07-03T07:22:34.278372" level="INFO">${response} = {'status_code': 200, 'json': {'id': '6684d20978fc5d8f0e000ac8', 'name': 'new board', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, ...</msg>
 <var>${response}</var>
 <arg>${method}</arg>
 <arg>${url}</arg>
 <arg>${headers}</arg>
 <arg>${payload}</arg>
-<status status="FAIL" start="2024-06-25T22:30:31.937944" elapsed="0.624053">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</status>
+<status status="PASS" start="2024-07-03T07:22:33.258949" elapsed="1.019546"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="NOT RUN" start="2024-06-25T22:30:32.562084" elapsed="0.000021"/>
+<status status="PASS" start="2024-07-03T07:22:34.278694" elapsed="0.000096"/>
 </return>
+<msg time="2024-07-03T07:22:34.279208" level="INFO">${response} = {'status_code': 200, 'json': {'id': '6684d20978fc5d8f0e000ac8', 'name': 'new board', 'desc': '', 'descData': None, 'closed': False, 'idOrganization': '65cfa176a2dc33b3f91bb93d', 'idEnterprise': None, ...</msg>
 <var>${response}</var>
 <arg>POST</arg>
 <arg>${url}</arg>
 <arg>${HEADERS}</arg>
 <arg>${NEW_BOARD_PAYLOAD_WITH_NAME}</arg>
-<status status="FAIL" start="2024-06-25T22:30:31.937002" elapsed="0.625200">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</status>
+<status status="PASS" start="2024-07-03T07:22:33.258609" elapsed="1.020790"/>
 </kw>
 <kw name="Should Not Be Equal As Numbers" owner="BuiltIn">
+<msg time="2024-07-03T07:22:34.281251" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2024-07-03T07:22:34.281542" level="FAIL">200.0 == 200.0</msg>
 <arg>${response['status_code']}</arg>
 <arg>200</arg>
 <doc>Fails if objects are equal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2024-06-25T22:30:32.562397" elapsed="0.000029"/>
+<status status="FAIL" start="2024-07-03T07:22:34.279922" elapsed="0.001848">200.0 == 200.0</status>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-06-25T22:30:32.562587" elapsed="0.000018"/>
+<status status="NOT RUN" start="2024-07-03T07:22:34.282309" elapsed="0.000079"/>
 </kw>
 <doc>Verify that creating a board without  the same name will not work.</doc>
 <tag>CreateBoard</tag>
-<status status="FAIL" start="2024-06-25T22:30:31.934086" elapsed="0.628693">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/boards</status>
+<status status="FAIL" start="2024-07-03T07:22:33.257916" elapsed="1.025053">200.0 == 200.0</status>
 </test>
-<status status="FAIL" start="2024-06-25T22:30:30.030042" elapsed="2.533090"/>
+<status status="FAIL" start="2024-07-03T07:22:31.000757" elapsed="3.283449"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="3" skip="0">All Tests</stat>
+<stat pass="1" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="3" skip="0">CreateBoard</stat>
+<stat pass="1" fail="2" skip="0">CreateBoard</stat>
 </tag>
 <suite>
-<stat pass="0" fail="3" skip="0" id="s1" name="TestSuite CreateBoard">TestSuite CreateBoard</stat>
+<stat pass="1" fail="2" skip="0" id="s1" name="TestSuite CreateBoard">TestSuite CreateBoard</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-06-25T22:30:30.053247" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-07-03T07:22:31.015858" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>

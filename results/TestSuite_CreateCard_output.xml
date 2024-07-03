@@ -1,100 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-06-25T22:30:34.633810" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.11.6 on linux)" generated="2024-07-03T07:22:36.736228" rpa="false" schemaversion="5">
 <suite id="s1" name="TestSuite CreateCard" source="/home/hetu/Desktop/4th-year/Assignment/FTP/tests/TestSuite_CreateCard.robot">
 <test id="s1-t1" name="TC_Create_Card_06" line="11">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-06-25T22:30:34.779389" level="INFO">${url} = https://trello.com/1/cards</msg>
+<msg time="2024-07-03T07:22:36.864855" level="INFO">${url} = https://trello.com/1/cards</msg>
 <var>${url}</var>
 <arg>https://trello.com/1/cards</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-06-25T22:30:34.779172" elapsed="0.000249"/>
+<status status="PASS" start="2024-07-03T07:22:36.864689" elapsed="0.000195"/>
 </kw>
 <kw name="Make API Request" owner="CommonKeywords">
 <kw name="Make Request" owner="CustomKeywords">
-<msg time="2024-06-25T22:30:35.712144" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667b1adbf6bf75778b05188d', 'badges': {'attachmentsByType': {'trello': {'board': 0, 'card': 0}}, 'externalSource': None, 'location': False, 'votes': 0, 'viewingMemb...</msg>
+<msg time="2024-07-03T07:22:37.863936" level="INFO">${response} = {'status_code': 200, 'json': {'id': '6684d20d4dbf2770dc62068a', 'badges': {'attachmentsByType': {'trello': {'board': 0, 'card': 0}}, 'externalSource': None, 'location': False, 'votes': 0, 'viewingMemb...</msg>
 <var>${response}</var>
 <arg>${method}</arg>
 <arg>${url}</arg>
 <arg>${headers}</arg>
 <arg>${payload}</arg>
-<status status="PASS" start="2024-06-25T22:30:34.780067" elapsed="0.932207"/>
+<status status="PASS" start="2024-07-03T07:22:36.865443" elapsed="0.998598"/>
 </kw>
 <return>
 <value>${response}</value>
-<status status="PASS" start="2024-06-25T22:30:35.712559" elapsed="0.000149"/>
+<status status="PASS" start="2024-07-03T07:22:37.864220" elapsed="0.000113"/>
 </return>
-<msg time="2024-06-25T22:30:35.713101" level="INFO">${response} = {'status_code': 200, 'json': {'id': '667b1adbf6bf75778b05188d', 'badges': {'attachmentsByType': {'trello': {'board': 0, 'card': 0}}, 'externalSource': None, 'location': False, 'votes': 0, 'viewingMemb...</msg>
+<msg time="2024-07-03T07:22:37.864723" level="INFO">${response} = {'status_code': 200, 'json': {'id': '6684d20d4dbf2770dc62068a', 'badges': {'attachmentsByType': {'trello': {'board': 0, 'card': 0}}, 'externalSource': None, 'location': False, 'votes': 0, 'viewingMemb...</msg>
 <var>${response}</var>
 <arg>POST</arg>
 <arg>${url}</arg>
 <arg>${HEADERS}</arg>
 <arg>${NEW_CARD_PAYLOAD_WITH_NAME}</arg>
-<status status="PASS" start="2024-06-25T22:30:34.779699" elapsed="0.933510"/>
+<status status="PASS" start="2024-07-03T07:22:36.865114" elapsed="0.999663"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-06-25T22:30:35.714809" level="INFO">Argument types are:
+<msg time="2024-07-03T07:22:37.866280" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response['status_code']}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-06-25T22:30:35.713697" elapsed="0.001293"/>
+<status status="PASS" start="2024-07-03T07:22:37.865181" elapsed="0.001232"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-06-25T22:30:35.715818" level="INFO">{'status_code': 200, 'json': {'id': '667b1adbf6bf75778b05188d', 'badges': {'attachmentsByType': {'trello': {'board': 0, 'card': 0}}, 'externalSource': None, 'location': False, 'votes': 0, 'viewingMemberVoted': False, 'subscribed': False, 'attachments': 0, 'fogbugz': '', 'checkItems': 0, 'checkItemsChecked': 0, 'checkItemsEarliestDue': None, 'comments': 0, 'description': False, 'due': None, 'dueComplete': False, 'lastUpdatedByAi': False, 'start': None}, 'checkItemStates': [], 'closed': False, 'dueComplete': False, 'dateLastActivity': '2024-06-25T19:30:35.530Z', 'desc': '', 'descData': {'emoji': {}}, 'due': None, 'dueReminder': None, 'email': 'adamweiss62+31z2yvno3h4cxdywn94+32p4nx5pj1wc64a17yl+1kzehyosu1@boards.trello.com', 'idBoard': '667abce41d62f33346bdc71d', 'idChecklists': [], 'idList': '667af26cdc059bb31592a0fa', 'idMembers': [], 'idMembersVoted': [], 'idShort': 8, 'idAttachmentCover': None, 'labels': [], 'idLabels': [], 'manualCoverAttachment': False, 'name': '', 'pos': 66048, 'shortLink': 'QkMce3tE', 'shortUrl': 'https://trello.com/c/QkMce3tE', 'start': None, 'subscribed': False, 'url': 'https://trello.com/c/QkMce3tE/8--', 'cover': {'idAttachment': None, 'color': None, 'idUploadedBackground': None, 'size': 'normal', 'brightness': 'dark', 'idPlugin': None}, 'isTemplate': False, 'cardRole': None, 'attachments': [], 'stickers': [], 'limits': {}}}</msg>
+<msg time="2024-07-03T07:22:37.867031" level="INFO">{'status_code': 200, 'json': {'id': '6684d20d4dbf2770dc62068a', 'badges': {'attachmentsByType': {'trello': {'board': 0, 'card': 0}}, 'externalSource': None, 'location': False, 'votes': 0, 'viewingMemberVoted': False, 'subscribed': False, 'attachments': 0, 'fogbugz': '', 'checkItems': 0, 'checkItemsChecked': 0, 'checkItemsEarliestDue': None, 'comments': 0, 'description': False, 'due': None, 'dueComplete': False, 'lastUpdatedByAi': False, 'start': None}, 'checkItemStates': [], 'closed': False, 'dueComplete': False, 'dateLastActivity': '2024-07-03T04:22:37.676Z', 'desc': '', 'descData': {'emoji': {}}, 'due': None, 'dueReminder': None, 'email': 'adamweiss62+31z2yvno3h4cxdywn94+32qlskc6u5uqf7gwd56+1sniw0e8tx@boards.trello.com', 'idBoard': '667abce41d62f33346bdc71d', 'idChecklists': [], 'idList': '667af26cdc059bb31592a0fa', 'idMembers': [], 'idMembersVoted': [], 'idShort': 9, 'idAttachmentCover': None, 'labels': [], 'idLabels': [], 'manualCoverAttachment': False, 'name': '', 'pos': 65792, 'shortLink': 'ittjgCyr', 'shortUrl': 'https://trello.com/c/ittjgCyr', 'start': None, 'subscribed': False, 'url': 'https://trello.com/c/ittjgCyr/9--', 'cover': {'idAttachment': None, 'color': None, 'idUploadedBackground': None, 'size': 'normal', 'brightness': 'dark', 'idPlugin': None}, 'isTemplate': False, 'cardRole': None, 'attachments': [], 'stickers': [], 'limits': {}}}</msg>
 <arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-06-25T22:30:35.715471" elapsed="0.000464"/>
+<status status="PASS" start="2024-07-03T07:22:37.866769" elapsed="0.000309"/>
 </kw>
 <doc>Verify that a card can be created successfully with a valid name</doc>
 <tag>CreateCard</tag>
-<status status="PASS" start="2024-06-25T22:30:34.778490" elapsed="0.937768"/>
+<status status="PASS" start="2024-07-03T07:22:36.864034" elapsed="1.003171"/>
 </test>
 <test id="s1-t2" name="TC_Create_Card_07" line="19">
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-06-25T22:30:35.717772" level="INFO">${url} = https://trello.com/1/cards</msg>
+<msg time="2024-07-03T07:22:37.867797" level="INFO">${url} = https://trello.com/1/cards</msg>
 <var>${url}</var>
 <arg>https://trello.com/1/cards</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-06-25T22:30:35.717494" elapsed="0.000353"/>
+<status status="PASS" start="2024-07-03T07:22:37.867684" elapsed="0.000131"/>
 </kw>
 <kw name="Make API Request" owner="CommonKeywords">
 <kw name="Make Request" owner="CustomKeywords">
-<msg time="2024-06-25T22:30:36.398477" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/cards</msg>
+<msg time="2024-07-03T07:22:38.578018" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/cards</msg>
 <var>${response}</var>
 <arg>${method}</arg>
 <arg>${url}</arg>
 <arg>${headers}</arg>
 <arg>${payload}</arg>
-<status status="FAIL" start="2024-06-25T22:30:35.718902" elapsed="0.680741">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/cards</status>
+<status status="FAIL" start="2024-07-03T07:22:37.868278" elapsed="0.711084">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/cards</status>
 </kw>
 <return>
 <value>${response}</value>
-<status status="NOT RUN" start="2024-06-25T22:30:36.399838" elapsed="0.000037"/>
+<status status="NOT RUN" start="2024-07-03T07:22:38.579649" elapsed="0.000071"/>
 </return>
 <var>${response}</var>
 <arg>POST</arg>
 <arg>${url}</arg>
 <arg>${HEADERS}</arg>
 <arg>${NEW_CARD_PAYLOAD_WITHOUT_ID}</arg>
-<status status="FAIL" start="2024-06-25T22:30:35.718252" elapsed="0.681846">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/cards</status>
+<status status="FAIL" start="2024-07-03T07:22:37.867996" elapsed="0.712056">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/cards</status>
 </kw>
 <kw name="Should Not Be Equal As Numbers" owner="BuiltIn">
 <arg>${response['status_code']}</arg>
 <arg>200</arg>
 <doc>Fails if objects are equal after converting them to real numbers.</doc>
-<status status="NOT RUN" start="2024-06-25T22:30:36.400493" elapsed="0.000054"/>
+<status status="NOT RUN" start="2024-07-03T07:22:38.580589" elapsed="0.000078"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
 <arg>${response}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="NOT RUN" start="2024-06-25T22:30:36.400888" elapsed="0.000044"/>
+<status status="NOT RUN" start="2024-07-03T07:22:38.581117" elapsed="0.000074"/>
 </kw>
 <doc>This test verifies that a card cannot be created on a deleted board.</doc>
 <tag>CreateCard</tag>
-<status status="FAIL" start="2024-06-25T22:30:35.716754" elapsed="0.684552">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/cards</status>
+<status status="FAIL" start="2024-07-03T07:22:37.867385" elapsed="0.714341">HTTPError: 400 Client Error: Bad Request for url: https://trello.com/1/cards</status>
 </test>
-<status status="FAIL" start="2024-06-25T22:30:34.634614" elapsed="1.767500"/>
+<status status="FAIL" start="2024-07-03T07:22:36.736957" elapsed="1.845368"/>
 </suite>
 <statistics>
 <total>
@@ -108,6 +108,6 @@
 </suite>
 </statistics>
 <errors>
-<msg time="2024-06-25T22:30:34.651901" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-07-03T07:22:36.752028" level="WARN">Error in file '/home/hetu/Desktop/4th-year/Assignment/FTP/resources/CommonKeywords.robot' on line 10: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
 </errors>
 </robot>
